@@ -1,19 +1,3 @@
-const input = document.getElementById("taskInput");
-const button = document.getElementById("addBtn");
-const list = document.getElementById("taskList");
+const currentPage = window.location.pathname;
 
-button.addEventListener("click", () => {
-    const taskText = input.value;
-
-    if (taskText === "") {
-        return;
-    }
-
-    const li = document.createElement("li");
-
-    li.textContent = taskText;
-
-    list.appendChild(li);
-
-    input.value = "";
-});
+console.log("Current page:", currentPage);$
