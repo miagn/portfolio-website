@@ -5,8 +5,29 @@
 body {
     margin: 0;
     min-height: 100vh;
-    font-family: Arial, sans-serif;
+    font-family: 'Nunito', sans-serif;
     overflow-x: hidden;
+}
+
+h1, h2 {
+    font-family: 'Pixelify Sans', sans-serif;
+}
+
+h1 {
+    font-size: 56px;
+    margin-top: 0;
+    color: white;
+    text-shadow: 0 0 14px rgba(255, 255, 255, 0.25);
+}
+
+h2 {
+    font-size: 23px;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: white;
 }
 
 .home-page {
@@ -25,6 +46,11 @@ body {
     background-attachment: fixed;
 
     overflow-x: hidden;
+    
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
 }
 
 .about-page {
@@ -39,6 +65,7 @@ body {
 
     background-attachment: fixed;
 }
+
 
 /* Navigation */
 
@@ -63,12 +90,49 @@ nav a:hover {
     text-shadow: 0 0 12px rgba(255, 255, 255, 0.8);
 }
 
-/* Main content card */
+/* HOME PAGE */
+
+.hero {
+    flex: 1;
+    margin: 0;
+    max-width: 100%;
+    border-radius: 0;
+    background: transparent;
+    backdrop-filter: none;
+    border: none;
+    box-shadow: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.cta-btn {
+    display: inline-block;
+    margin-top: 24px;
+    padding: 14px 32px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.22);
+    color: white;
+    font-size: 16px;
+    text-decoration: none;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: 0.3s;
+}
+
+.cta-btn:hover {
+    background: rgba(255, 255, 255, 0.35);
+    transform: translateY(-2px);
+}
+
+/* ABOUT PAGE */
 
 section {
     max-width: 850px;
     margin: 100px auto;
-    padding: 50px;
+    padding: 30px;
     border-radius: 30px;
     background: rgba(255, 255, 255, 0.12);
     backdrop-filter: blur(18px);
@@ -80,21 +144,41 @@ section {
     z-index: 10;
 }
 
-h1 {
-    font-size: 56px;
-    margin-top: 0;
-    color: navy;
-    text-shadow: 0 0 14px rgba(255, 255, 255, 0.25);
+.sections-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);  /* 2 equal columns */
+    gap: 24px;                               /* space between cards */
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 24px;
 }
 
-p {
-    font-size: 18px;
-    line-height: 1.8;
+.page-intro {
+    max-width: 700px;
+    margin: 32px auto;
+    text-align: center;
     color: navy;
+    font-size: 25px;
 }
 
+.card {
+    padding: 24px 28px;
+    border-radius: 30px;
+    max-width: none;
+    margin: 0;
+}
 
+.card img {
+    width: 100%;
+    border-radius: 12px
+}
 
+.card li {
+    line-height: 1.5;
+    margin-bottom: 8px;
+}
+
+/* DECORATIVE
 /* Moon */
 
 .moon {
@@ -129,7 +213,7 @@ p {
 
     background-image:
 
-        /* DENSE BOTTOM RIGHT */
+        /* dense bottom right */
 
         radial-gradient(2px 2px at 98% 95%, rgba(255,255,255,0.95), transparent),
         radial-gradient(1px 1px at 96% 92%, rgba(255,255,255,0.8), transparent),
@@ -142,7 +226,7 @@ p {
         radial-gradient(2px 2px at 91% 73%, rgba(255,255,255,0.9), transparent),
         radial-gradient(1.5px 1.5px at 89% 69%, rgba(255,255,255,0.8), transparent),
 
-        /* LOWER RIGHT SPREAD */
+        /* lower right spread */
 
         radial-gradient(2px 2px at 86% 90%, rgba(255,255,255,0.85), transparent),
         radial-gradient(1px 1px at 84% 86%, rgba(255,255,255,0.65), transparent),
@@ -153,7 +237,7 @@ p {
         radial-gradient(2px 2px at 74% 66%, rgba(255,255,255,0.9), transparent),
         radial-gradient(1px 1px at 72% 62%, rgba(255,255,255,0.65), transparent),
 
-        /* MID TRANSITION */
+        /* mid transition */
 
         radial-gradient(1px 1px at 70% 82%, rgba(255,255,255,0.55), transparent),
         radial-gradient(2px 2px at 68% 76%, rgba(255,255,255,0.7), transparent),
@@ -162,14 +246,14 @@ p {
         radial-gradient(1px 1px at 62% 64%, rgba(255,255,255,0.45), transparent),
         radial-gradient(2px 2px at 60% 60%, rgba(255,255,255,0.7), transparent),
 
-        /* FEW STARS HIGHER UP */
+        /* few stars higher up */
 
         radial-gradient(1px 1px at 78% 42%, rgba(255,255,255,0.4), transparent),
         radial-gradient(2px 2px at 86% 36%, rgba(255,255,255,0.55), transparent),
         radial-gradient(1px 1px at 92% 28%, rgba(255,255,255,0.35), transparent),
         radial-gradient(1px 1px at 72% 20%, rgba(255,255,255,0.3), transparent),
 
-        /* HERO STARS */
+        /* hero stars */
 
         radial-gradient(4px 4px at 88% 72%, rgba(255,255,255,1), transparent),
         radial-gradient(3px 3px at 96% 82%, rgba(255,255,255,1), transparent),
@@ -218,7 +302,7 @@ p {
 .cloud1 {
     width: 220px;
     height: 70px;
-    top: 100px;
+    top: 230px;
     left: -250px;
     animation: drift 45s linear infinite;
 }
@@ -240,7 +324,7 @@ p {
 .cloud2 {
     width: 180px;
     height: 55px;
-    top: 230px;
+    top: 420px;
     left: -300px;
     opacity: 0.65;
     animation: drift 60s linear infinite;
@@ -264,7 +348,7 @@ p {
 .cloud3 {
     width: 260px;
     height: 80px;
-    top: 470px;
+    top: 580px;
     left: -350px;
     opacity: 0.5;
     animation: drift 75s linear infinite;
@@ -382,25 +466,6 @@ p {
 
         opacity: 0;
     }
-}
-
-/* Buttons */
-
-button {
-    padding: 12px 22px;
-    border: none;
-    border-radius: 999px;
-    background: rgba(255, 255, 255, 0.22);
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-    backdrop-filter: blur(10px);
-    transition: 0.3s;
-}
-
-button:hover {
-    background: rgba(255, 255, 255, 0.35);
-    transform: translateY(-2px);
 }
 
 /* Mobile responsiveness */
